@@ -1,17 +1,15 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PugPlugin = require('pug-plugin');
-const webpack = require('webpack');
 
 const isProduction = process.env.NODE_ENV === 'production';
-
 module.exports = {
   mode: isProduction ? 'production' : 'development',
-  entry: './src/pug/index.pug',
+  entry: {
+    index: './src/pug/index.pug',
+  },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: './',
-    filename: 'bundle.js',
+    path: path.join(__dirname, 'dist'),
+    filename: '[contenthash].js',
     assetModuleFilename: '[hash][ext][query]',
     clean: true,
   },
@@ -23,46 +21,36 @@ module.exports = {
     host: 'localhost',
     hot: true,
     static: {
-      directory: path.join(__dirname, './src'),
+      directory: path.join(__dirname, 'dist'),
+    },
+    watchFiles: {
+      paths: ['src/**/*.*'], 
+      options: {
+        usePolling: true,
+      },
     },
   },
   plugins: [
     new PugPlugin({
       extractCss: {
-        filename: '[contenthash].css',
+        filename: '[contenthash].css'
       },
-    }),
-    new webpack.HotModuleReplacementPlugin(),
+    })
   ],
   module: {
     rules: [
       {
-        test: /\.html$/i,
-        loader: 'html-loader',
-      },
-      {
-        test: /\.(?:ico|gif|png|jpg|jpeg|svg|webp)$/i,
-        type: 'asset/resource',
-      },
-      {
-        test: /\.(?:mp3|wav|ogg|mp4)$/i,
-        type: 'asset/resource',
-      },
-      {
-        test: /\.(woff(2)?|eot|ttf|otf)$/i,
-        type: 'asset/resource',
-      },
-      {
         test: /\.pug$/,
-        loader: PugPlugin.loader, 
-        options: {
-          method: 'render',
-        }
+        loader: PugPlugin.loader,
       },
       {
         test: /\.(css|sass|scss)$/,
         use: ['css-loader', 'sass-loader']
       },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+        type: 'asset/resource',
+      }
     ],
-  },
+  }
 };
