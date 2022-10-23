@@ -1,0 +1,5 @@
+mixin linksList(listArr, listClass)
+  ul(class=`${listClass}-list`)
+    for itemObj in listArr 
+      li(class=`${listClass}-list__item`)
+          a(class=`${listClass}-list__link` href=itemObj.href)= itemObj.text
