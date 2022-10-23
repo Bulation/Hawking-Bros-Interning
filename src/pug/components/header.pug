@@ -1,0 +1,18 @@
+include ../constants/constants.pug
+include ../mixins/mixins.pug
+
+header.header
+  .container.header-container
+    .logo
+      button.header__burger 
+    nav.navigation 
+      +linksList(navArr, 'navigation')
+    a.header__phone(href="tel:+78125092198") 
+      span.header__region +7 (812)
+      span.header__number 509 21 98
+    button.header__callback Перезвоните мне
+    +linksList(socialsArr, 'socials')
+    .header-buttons 
+      button.header-buttons__search 
+      button.header-buttons__favourite 
+      button.header-buttons__cart
