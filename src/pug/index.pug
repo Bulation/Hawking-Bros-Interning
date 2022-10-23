@@ -1,8 +1,13 @@
 doctype html
 html(lang='en')
   head
-    title= 'Дымоход'
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Дымоход
     link(href=require('../scss/styles.scss') rel='stylesheet')
     script(src=require('../js/index.js'))
   body
-    p afa
+    include ./components/header.pug
+    include ./components/main.pug
+    include ./components/footer.pug
