@@ -3,16 +3,18 @@ include ../mixins/mixins.pug
 
 header.header
   .container.header-container
-    .logo
-    button.header__burger 
+    a.logo(href="index.html")
+    button.header__burger.burger
+      span.burger__line
     nav.navigation 
       +linksList(navArr, 'navigation')
-    a.header__phone(href="tel:+78125092198") 
-      span.header__region +7 (812)
-      span.header__number 509 21 98
+    a.header__phone.phone(href="tel:+78125092198") 
+      span.phone__region +7 (812) 
+      span.phone__number 509 21 98
     button.header__callback Перезвоните мне
     +linksList(socialsArr, 'socials')
     .header-buttons 
-      button.header-buttons__search 
-      button.header-buttons__favourite 
-      button.header-buttons__cart
+      button.header-buttons__search.header-button
+      button.header-buttons__favourite.header-button
+      button.header-buttons__cart.header-button.cart-button
+        span.cart-button__text 10
