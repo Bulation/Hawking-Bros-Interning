@@ -2,4 +2,7 @@ mixin linksList(listArr, listClass)
   ul(class=`${listClass}-list`)
     for itemObj in listArr 
       li(class=`${listClass}-list__item`)
+        if itemObj.class
+          a(class=`${listClass}-list__link ${listClass}-list__link_${itemObj.class}` href=itemObj.href)= itemObj.text
+        else
           a(class=`${listClass}-list__link` href=itemObj.href)= itemObj.text
