@@ -1,0 +1,180 @@
+.header-container {
+  display: flex;
+  max-width: 1785px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 15px 56px;
+}
+
+.logo {
+  display: block;
+  width: 100px;
+  height: 97px;
+  background: url(../../assets/logo.png) no-repeat;
+  background-size: contain;
+}
+
+.burger {
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--header-color);
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  &__line {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 0 auto;
+    background-color: var(--header-color);
+    position: relative;
+    &:before, &:after {
+      content: '';
+      width: 22px;
+      height: 2px;
+      background-color: var(--header-color);
+      position: absolute;
+      left: 0;
+    }
+    &:before {
+      top: -8px;
+    }
+    &:after {
+      top: 8px;
+    }
+  }
+}
+
+.navigation-list {
+  display: flex;
+  gap: 40px;
+  list-style-type: none;
+  &__link {
+    font: 700 16px/23px Montserrat;
+    color: var(--header-color);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}
+
+.phone {
+  display: block;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: var(--header-color);
+  font: 400 16px/20px Montserrat;
+  &__number {
+    color: var(--dark-color);
+    font-weight: bold;
+  }
+}
+
+.header__callback {
+  font: 700 14px/17px Montserrat;
+  color: var(--callback-color);
+  text-transform: uppercase;
+  background: none;
+  border-bottom: 1px dashed var(--callback-color);
+  cursor: pointer;
+}
+
+.socials-list {
+  display: flex;
+  gap: 15px;
+  list-style-type: none;
+  &__link {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@each $social in vk, tg, inst, whatsapp {
+  .socials-list__link_#{$social} {
+    -webkit-mask-image: url(../../assets/#{$social}.svg);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+            mask-repeat: no-repeat;
+            mask-image: url(../../assets/#{$social}.svg);
+            mask-position: center;
+    background-color: var(--footer-color);
+    &:hover {
+      background-color: var(--socials-bg-color);
+    }
+  }
+}
+
+.header-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.header-button {
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--header-btn-border-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.cart-button {
+  position: relative;
+  &__text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    font: 900 11px/13px Lato;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    color: var(--light-color);
+    background-color: var(--header-cart-bg-color);
+    padding-top: 3px;
+  }
+}
+
+@each $btn in search, favourite, cart {
+  .header-buttons__#{$btn} {
+    background: url(../../assets/#{$btn}.svg) no-repeat center;
+  }
+}
+
+@media screen and (max-width: 1560px) {
+  .navigation-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .socials-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .navigation-list, .socials-list, .phone, .header__callback {
+    display: none;
+  }
+  .logo {
+    width: 64px;
+    height: 62px;
+  }
+  .burger {
+    order: 1;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .header-buttons__search, .header-buttons__favourite {
+    display: none;
+  }
+  .burger, .header-buttons__cart {
+    width: 44px;
+    height: 44px;
+  }
+  .logo {
+    width: 48px;
+    height: 47px;
+  }
+}
