@@ -1,0 +1,89 @@
+.advantages-container {
+  display: flex;
+  gap: 46px;
+  padding: 30px 0 50px; 
+  position: relative;
+}
+
+.advantages__title {
+  font: 600 40px/63px Montserrat;
+  color: var(--dark-color);
+  margin-bottom: 40px;
+  &_colored {
+    display: block;
+    text-transform: uppercase;
+    color: var(--advantages-title-color);
+    font-weight: 800;
+  }
+}
+
+.advantages-list-container {
+  flex-basis: 580px;
+  flex-shrink: 0;
+}
+
+.advantages-list {
+  font: 400 16px/24px Montserrat;
+  list-style-type: none;
+  color: var(--dark-color);
+  &__item {
+    margin-left: 45px;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      left: -26px;
+      top: 7px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: var(--list-marker-color);
+    }
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.advantages-img-container {
+  width: 766px;
+  height: 574px;
+  flex-shrink: 0;
+  background: url(../../assets/chimneybg.svg) no-repeat;
+  position: relative;
+}
+
+.advantages__img {
+  position: absolute;
+  left: 50%;
+  top: calc(50% - 120px);
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 1540px) {
+  .advantages-img-container {
+    display: none;
+  }
+  .advantages-list-container {
+    flex-basis: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .advantages-container {
+    padding-top: 0;
+  }
+  .advantages__title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    &_colored {
+      font-size: 40px;
+      line-height: 52px;
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .advantages-list {
+    font-size: 14px;
+  }
+}
