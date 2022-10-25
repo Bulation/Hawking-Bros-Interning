@@ -42,7 +42,7 @@
       top: 5px;
     }
     &_colored {
-      color: var(--footer-color);
+      color: var(--main-color);
     }
   }
   &__time {
@@ -76,7 +76,7 @@
     -webkit-mask-repeat: no-repeat;
             mask-repeat: no-repeat;
             mask-image: url(../../assets/#{$social}.svg);
-    background-color: var(--footer-color);
+    background-color: var(--main-color);
   }
 }
 

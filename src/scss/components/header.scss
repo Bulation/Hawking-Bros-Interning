@@ -17,7 +17,7 @@
 .burger {
   width: 56px;
   height: 56px;
-  border: 1px solid var(--header-color);
+  border: 1px solid var(--main-color);
   border-radius: 50%;
   background: none;
   cursor: pointer;
@@ -26,13 +26,13 @@
     width: 22px;
     height: 2px;
     margin: 0 auto;
-    background-color: var(--header-color);
+    background-color: var(--main-color);
     position: relative;
     &:before, &:after {
       content: '';
       width: 22px;
       height: 2px;
-      background-color: var(--header-color);
+      background-color: var(--main-color);
       position: absolute;
       left: 0;
     }
@@ -51,7 +51,7 @@
   list-style-type: none;
   &__link {
     font: 700 16px/23px Montserrat;
-    color: var(--header-color);
+    color: var(--main-color);
     text-transform: uppercase;
     text-decoration: none;
   }
@@ -61,7 +61,7 @@
   display: block;
   text-decoration: none;
   letter-spacing: 2px;
-  color: var(--header-color);
+  color: var(--main-color);
   font: 400 16px/20px Montserrat;
   &__number {
     color: var(--dark-color);
