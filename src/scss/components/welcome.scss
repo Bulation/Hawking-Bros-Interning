@@ -1,0 +1,58 @@
+.welcome-container {
+  padding: 56px 15px 17px;
+}
+
+.title {
+  color: var(--dark-color);
+  font: 700 60px/73px Montserrat;
+}
+
+.welcome__title {
+  margin-bottom: 41px;
+}
+
+.welcome__text {
+  font: 400 16px/30px Montserrat;
+  color: var(--dark-color);
+  margin-top: 81px;
+  &_colored {
+    font-weight: 600;
+    color: var(--welcome-text-color);
+  }
+}
+
+.breadcrumbs {
+  display: flex;
+  gap: 7px;
+  padding: 14px 0;
+  border-top: 1px solid var(--breadcrumbs-border-color);
+  border-bottom: 1px solid var(--breadcrumbs-border-color);
+  &__link {
+    display: block;
+    text-decoration: none;
+    font: 400 12px/15px Montserrat;
+    color: var(--main-color);
+    &_active {
+      color: var(--breadcrumbs-link-color);
+    }
+  }
+  &__separator {
+    position: relative;
+    &:before, &:after {
+      content: '';
+      background-color: var(--main-color);
+      position: absolute;
+      width: 1px;
+      height: 5px;
+      left: 0;
+    }
+    &:before {
+      top: 4px;
+      transform: rotate(-45deg);
+    }
+    &:after {
+      bottom: 3px;
+      transform: rotate(-135deg);
+    }
+  }
+}
