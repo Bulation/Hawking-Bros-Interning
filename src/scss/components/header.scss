@@ -3,7 +3,7 @@
   max-width: 1785px;
   justify-content: space-between;
   align-items: center;
-  padding: 26px 15px 56px;
+  padding: 26px 0 0;
 }
 
 .logo {
@@ -112,7 +112,7 @@
 .header-button {
   width: 56px;
   height: 56px;
-  border: 1px solid var(--header-btn-border-color);
+  border: 1px solid var(--border-color);
   border-radius: 50%;
   cursor: pointer;
 }
@@ -163,6 +163,10 @@
   .burger {
     order: 1;
   }
+  .header-container {
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-color);
+  }
 }
 
 @media screen and (max-width: 520px) {
@@ -176,5 +180,8 @@
   .logo {
     width: 48px;
     height: 47px;
+  }
+  .header-container {
+    padding: 16px 0;
   }
 }
