@@ -97,7 +97,7 @@
             mask-repeat: no-repeat;
             mask-image: url(../../assets/#{$social}.svg);
             mask-position: center;
-    background-color: var(--footer-color);
+    background-color: var(--main-color);
     &:hover {
       background-color: var(--socials-bg-color);
     }
