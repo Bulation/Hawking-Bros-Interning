@@ -2,13 +2,13 @@ include ../mixins/mixins.pug
 include ../constants/constants.pug
 
 section.consultation
-  .container
-    h2.sectiont-title.consultation__title Необходима консультация?
+  .container.consultation-container
+    h2.consultation__title Необходима консультация?
     p.consultation__subtitle оставьте заявку или свяжитесь с нами в социальных сетях
     +linksList(socialsArr, 'consultation-socials')
-    .form-container
+    .form-container.consultation__form
       form.form(action="#")
-        p.form__advice-text Для <span class="form__text_colored">консультации</span> заполните форму!
+        p.form__advice-text Для <span class="form__advice-text_colored">консультации</span> заполните форму!
         p.form__text С Вами свяжутся в ближайшее время
         div.form-inputs
           input.form-inputs__input(type="text" placeholder="Ваше имя" required)

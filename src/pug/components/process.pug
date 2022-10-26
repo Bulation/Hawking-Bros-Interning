@@ -1,8 +1,8 @@
 include ../constants/constants.pug
 
 section.process
-  .container
-    h2.section-title Процесс выполнения монтажа
+  .container.process-container
+    h2.section-title.process__title Процесс выполнения монтажа
     ol.process-list
       each itemText in processList
             li.process-list__item= itemText

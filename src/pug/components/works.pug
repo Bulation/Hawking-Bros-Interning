@@ -1,10 +1,10 @@
 include ../constants/constants.pug
 
 section.works
-  .container
+  .container.works-container
     h2.section-title Фото выполненных работ
     p.works__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     .works-photos-wrapper
-    -  for (let i = 0; i < 8; i += 1)
-      .works-photo-wrapper
-        img(src=`../../assets/work${i}`, alt="")
+      - for (let i = 1; i <= 8; i += 1)
+        .works-photo-wrapper
+          img.works__photo(src=require(`../../assets/work${i}.png`), alt="")
