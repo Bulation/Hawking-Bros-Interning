@@ -1,0 +1,95 @@
+.reasons-container {
+  padding-top: 80px;
+}
+
+.reasons__title {
+  margin-bottom: 50px;
+}
+
+.reasons__text {
+  font: 400 16px/30px Montserrat;
+  color: var(--dark-color);
+  margin-bottom: 50px;
+}
+
+.reasons-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  list-style-type: none;
+}
+
+.item {
+  width: calc(33% - 20px);
+  flex-shrink: 0;
+  &__icon {
+    width: 79px;
+    height: 79px;
+  }
+  
+  &__title {
+    font: 700 20px/30px Montserrat;
+    color: var(--dark-color);
+    margin: 32px 0 10px;
+  }
+  
+  &__text {
+    font: 400 16px/30px Montserrat;
+    color: var(--dark-color);
+    &_colored {
+      font-weight: 600;
+      color: var(--reason-text-color);
+    }
+  }
+}
+
+
+@each $name in guarantee, architect, review {
+  .item__icon-#{$name} {
+    background: url(../../assets/#{$name}.svg) no-repeat;
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+  .reasons__title {
+    margin-bottom: 37px;
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(50% - 20px);
+    &__title {
+      font-size: 18px;
+      margin: 26px 0 2px;
+    }
+  }
+  .reasons-list {
+    justify-content: center;
+  }
+  .item__text {
+    font: 400 14px/26px Montserrat;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .reasons__title {
+    margin-bottom: 26px;
+  }
+  .reasons__text {
+    font: 400 14px/26px Montserrat;
+    margin-bottom: 23px;
+  }
+  .item {
+    width: 100%;
+    &__title {
+      margin-top: 20px;
+    }
+  }
+  .reasons-list {
+    gap: 24px;
+  }
+}
