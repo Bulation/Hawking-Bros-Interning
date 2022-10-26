@@ -1,0 +1,55 @@
+.video-container {
+  padding-top: 125px;
+}
+
+.video-section__text {
+  margin: 66px 0 51px;
+  font: 400 16px/30px Montserrat;
+}
+
+.video-wrapper {
+  width: 1156px;
+  height: 406px;
+  margin: 0 auto;
+  background: url(../../assets/videobg.svg) no-repeat center;
+  position: relative;
+}
+
+.video {
+  position: absolute;
+  top: 49px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 771px;
+  height: 438px;
+}
+
+@media screen and (max-width: 1200px) {
+  .video-wrapper {
+    background: none;
+    width: 100%;
+    height: auto;
+  }
+  .video {
+    position: static;
+    transform: none;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .video-section__text {
+    margin: 33px 0;
+  }
+  .video-container {
+    padding-top: 74px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .video-section__text {
+    font: 400 14px/26px Montserrat;
+    margin: 28px 0 24px;
+  }
+  .video-container {
+    padding-top: 64px;
+  }
+}
