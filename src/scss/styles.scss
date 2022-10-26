@@ -1,3 +1,5 @@
-body {
-  background-color: red;
-}
+@import "./normalize.scss";
+@import "./constants/constants.scss";
+@import "./components/main.scss";
+@import "./components/header.scss";
+@import "./components/footer.scss";
