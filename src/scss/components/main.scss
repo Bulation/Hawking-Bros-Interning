@@ -1,0 +1,39 @@
+.container {
+  max-width: 1220px;
+  width: calc(100% - 30px);
+  margin: 0 auto;
+}
+
+.section-title {
+  color: var(--dark-color);
+  font: 600 40px/49px Montserrat;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -11px;
+    width: 74px;
+    height: 5px;
+    background-color: var(--title-bg-color);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-title {
+    font: 600 30px/37px Montserrat;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .section-title {
+    font: 600 20px/30px Montserrat;
+  }
+}
+
+@import "./welcome.scss";
+@import "./advantages.scss";
+@import "./process.scss";
+@import "./reason.scss";
+@import "./form.scss";
+@import "./video.scss";
+@import "./works.scss";
