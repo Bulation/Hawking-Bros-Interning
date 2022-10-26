@@ -1,0 +1,168 @@
+.consultation-container {
+  padding-top: 98px;
+}
+
+.consultation__title {
+  text-align: center;
+  text-transform: uppercase;
+  font: 800 50px/40px Montserrat;
+  color: var(--dark-color);
+}
+
+.consultation__subtitle {
+  text-align: center;
+  font: 300 22px/40px Montserrat;
+  color: var(--dark-color);
+  margin-bottom: 31px;
+}
+
+.consultation-socials-list {
+  display: flex;
+  list-style-type: none;
+  gap: 40px;
+  justify-content: center;
+  &__link {
+    display: block;
+    width: 23px;
+    height: 23px;
+  }
+}
+
+@each $social in vk,
+tg,
+inst,
+whatsapp {
+  .consultation-socials-list__link_#{$social} {
+    -webkit-mask-image: url(../../assets/#{$social}.svg);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+            mask-repeat: no-repeat;
+            mask-image: url(../../assets/#{$social}.svg);
+            mask-position: center;
+    background-color: var(--socials-bg-color);
+    &:hover {
+      background-color: var(--main-color);
+    }
+  }
+}
+
+
+
+.form-container {
+  max-width: 866px;
+  margin: 0 auto;
+  padding: 57px 55px 61px 59px;
+  box-shadow: 0px 4px 50px 0px #00000026;
+  background-color: var(--light-color);
+}
+
+.consultation__form {
+  margin-top: 40px;
+}
+
+.form__advice-text {
+  font: 500 20px/22px Montserrat;
+  margin-bottom: 12px;
+  color: var(--dark-color);
+  &_colored {
+    font-weight: 700;
+    color: var(--form-text-color);
+  }
+}
+
+.form__text {
+  font: 400 16px/30px Montserrat;
+  margin-bottom: 22px;
+  color: var(--dark-color);
+}
+
+.form-inputs {
+  display: flex;
+  gap: 16px;
+  &__input {
+    flex-grow: 1;
+    display: block;
+    padding: 17px;
+    font: 500 14px/22px Montserrat;
+    color: var(--form-input-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+  }
+  &__btn {
+    display: block;
+    flex-grow: 4;
+    padding: 17px 17px 19px 17px;
+    text-align: center;
+    color: var(--light-color);
+    font: 700 16px/20px Montserrat;
+    background-color: var(--form-btn-bg-color);
+    border-radius: 4px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .consultation-container {
+    padding-top: 50px;
+  }
+  .consultation__title {
+    font: 800 40px/30px Montserrat;
+  }
+  .consultation__subtitle {
+    font: 300 16px/30px Montserrat;
+    margin-bottom: 27px;
+  }
+  .consultation__form {
+    margin-top: 33px;
+  }
+  .form-container {
+    padding: 49px 50px 47px 59px;
+  }
+  .form-inputs {
+    display: block;
+    &__input {
+      width: 354px;
+      margin: 0 auto 15px;
+    }
+    &__btn {
+      width: 240px;
+      margin: 10px auto 0;
+    }
+  }
+  .form__advice-text, .form__text {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .consultation__title {
+    font-size: 22px;
+  }
+
+  .consultation__subtitle {
+    font: 300 14px/26px Montserrat;
+    margin-bottom: 21px;
+  }
+
+  .consultation__form {
+    margin-top: 25px;
+  }
+
+  .form-container {
+    padding: 25px 0 0;
+    border-top: 1px solid var(--border-color);
+    box-shadow: none;
+  }
+  .form-inputs__input {
+    width: 290px;
+  }
+  .form__advice-text {
+    font: 500 18px/26px Montserrat;
+    margin-bottom: 9px;
+  }
+
+  .form__text {
+    font: 400 14px/25px Montserrat;
+    margin-bottom: 27px;
+    color: var(--dark-color);
+  }
+}
