@@ -21,6 +21,8 @@
   border-radius: 50%;
   background: none;
   cursor: pointer;
+  transition: all 0.3s ease-in;
+  z-index: 5;
   &__line {
     display: block;
     width: 22px;
@@ -42,6 +44,9 @@
     &:after {
       top: 8px;
     }
+  }
+  &_active {
+    transform: rotate(90deg)
   }
 }
 
@@ -140,6 +145,8 @@
   }
 }
 
+
+
 @media screen and (max-width: 1560px) {
   .navigation-list {
     display: grid;
@@ -153,8 +160,26 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .navigation-list, .socials-list, .phone, .header__callback {
+  .navigation, .socials-list, .phone, .header__callback {
     display: none;
+  }
+  .navigation {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: calc(100% - 30px);
+    max-width: 620px;
+    background-color: var(--light-color);
+    z-index: 3;
+    margin: 0 auto;
+    transform: translate(100%);
+    padding: 40px 20px;
+  }
+  .navigation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
   .logo {
     width: 64px;
@@ -183,5 +208,36 @@
   }
   .header-container {
     padding: 16px 0;
+  }
+}
+
+.navigation_active {
+  display: block;
+  transform: translate(0);
+  animation: navFromRight 0.3s ease-in;
+}
+
+.navigation_inactive {
+  display: block;
+  animation: navToRight 0.3s ease-in;
+}
+
+@keyframes navFromRight {
+  0% {
+    transform: translate(100%);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes navToRight {
+  100% {
+    transform: translate(100%);
+  }
+
+  0% {
+    transform: translate(0);
   }
 }
